@@ -5,6 +5,8 @@ anexoa = pd.read_csv("AnexoA.csv")
 incidentes_nuevos = pd.read_csv("incidents_master-selected-columns.csv")
 
 def limpiar(df):
+    df = df.dropna(subset=["Registros", "Dias_Deteccion"])
+    
     Q1 = df["Registros"].quantile(0.25)
     Q3 = df["Registros"].quantile(0.75)
     IQR = Q3 - Q1
