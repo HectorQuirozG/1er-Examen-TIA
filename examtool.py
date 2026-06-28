@@ -43,5 +43,7 @@ incidentes_nuevos = formato_incidentes(incidentes_nuevos)
 
 df_combinado = combinar(anexoa, incidentes_nuevos)
 df_combinado.to_csv('dataset_raw.csv', index=False)
+print("Base de datos completa guardada como dataset_raw.csv")
 df_combinado = limpiar(df_combinado)
 df_combinado.to_csv('dataset.csv', index=False)
+print("Bases de datos limpia y homóloga guardada como dataset.csv")
