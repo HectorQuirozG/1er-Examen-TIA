@@ -5,9 +5,6 @@ anexoa = pd.read_csv("AnexoA.csv")
 incidentes_nuevos = pd.read_csv("incidents_master-selected-columns.csv")
 
 def limpiar(df):
-
-    df = df.dropna(subset=["Registros", "Dias_Deteccion"])
-    
     Q1 = df["Registros"].quantile(0.25)
     Q3 = df["Registros"].quantile(0.75)
     IQR = Q3 - Q1
@@ -42,6 +39,15 @@ def combinar(df1, df2):
     df_combinado = pd.concat(df_lista, ignore_index=True)
     return df_combinado
 
+def dataset_encode(df):
+    with open('codigos_s.json', 'r', encoding='utf-8') as f:
+        codigos = json.load(f)
+        df['Sector'] = df['Sector'].map(codigos)
+    with open('codigos_t.json', 'r', encoding='utf-8') as f:
+        codigos = json.load(f)
+        df['Tipo'] = df['Tipo'].map(codigos)
+    return df
+
 incidentes_nuevos = formato_incidentes(incidentes_nuevos)
 
 df_combinado = combinar(anexoa, incidentes_nuevos)
@@ -49,4 +55,7 @@ df_combinado.to_csv('dataset_raw.csv', index=False)
 print("Base de datos completa guardada como dataset_raw.csv")
 df_combinado = limpiar(df_combinado)
 df_combinado.to_csv('dataset.csv', index=False)
-print("Bases de datos limpia y homóloga guardada como dataset.csv")
+print("Base de datos limpia y homóloga guardada como dataset.csv")
+df_encoded = dataset_encode(df_combinado)
+df_encoded.to_csv('dataset_encoded.csv', index=False)
+print("Base de datos en codigo guardada como dataset_encoded.csv")
