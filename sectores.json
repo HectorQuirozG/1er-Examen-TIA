@@ -1,0 +1,22 @@
+{
+    "11": "Agricultura",
+    "21": "Mineria",
+    "22": "Energia",
+    "23": "Construccion",
+    "31-33": "Manufactura",
+    "42": "Mayoristas",
+    "44-45": "Retail",
+    "48-49": "Transporte",
+    "51": "Informacion",
+    "52": "Finanzas",
+    "53": "Inmobiliario",
+    "54": "Profesionales",
+    "55": "Corporativos",
+    "56": "Soporte",
+    "61": "Educacion",
+    "62": "Salud",
+    "71": "Entretenimiento",
+    "72": "Hosteleria",
+    "81": "Servicios",
+    "92": "Gobierno"
+}
