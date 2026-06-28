@@ -1,0 +1,22 @@
+{
+  "Primario": "11",
+  "Extraccion": "21",
+  "Utilidades": "22",
+  "Construccion": "23",
+  "Manufactura": "32",
+  "Wholesale": "42",
+  "Retail": "44",
+  "Transporte": "48",
+  "Tecnologia": "51",
+  "Finanzas": "52",
+  "Inmobiliario": "53",
+  "Profesionales": "54",
+  "Empresarial": "55",
+  "Soporte": "56",
+  "Educacion": "61",
+  "Salud": "62",
+  "Entretenimiento": "71",
+  "Hosteleria": "72",
+  "Servicios": "81",
+  "Gobierno": "92"
+}

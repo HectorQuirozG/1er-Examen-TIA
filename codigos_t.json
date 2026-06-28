@@ -1,0 +1,8 @@
+{
+	"Ransomware": "1",
+	"Phishing": "2",
+	"Malware": "3",
+	"Apt": "4",
+	"Data_breach": "5",
+	"Trojan": "6"
+}
